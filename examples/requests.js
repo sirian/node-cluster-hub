@@ -7,7 +7,7 @@ var hub = new Hub(cluster);
 
 if (cluster.isMaster) {
     hub.on('sum', function (data, sender, callback) {
-        callback(data.a + data.b);
+        callback(null, data.a + data.b);
     });
 
     var worker = cluster.fork();
@@ -15,7 +15,7 @@ if (cluster.isMaster) {
     hub.requestMaster('sum', {
         a: 5,
         b: 7
-    }, function (sum) {
+    }, function (err, sum) {
         console.log('Sum in master: ' + sum);
     });
 
@@ -23,19 +23,20 @@ if (cluster.isMaster) {
     hub.requestWorker(worker, 'mult', {
         a: 5,
         b: 7
-    }, function (sum) {
+    }, function (err, sum) {
         console.log('Mult in master: ' + sum);
     });
 
 } else {
     hub.on('mult', function (data, sender, callback) {
-        callback(data.a * data.b);
+
+        callback(null, data.a * data.b);
     });
 
     hub.requestMaster('sum', {
         a: 1,
         b:2
-    }, function (sum) {
+    }, function (err, sum) {
         console.log('Sum in worker: ' + sum);
         process.exit();
     });
