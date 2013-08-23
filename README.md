@@ -38,30 +38,40 @@ Simple message sending
 ```javascript
 hub.sendToMaster(message, data);  //works from workers and master
 hub.sendToWorker(worker, message, data);  // works from master
+hub.sendToWorkers(message, data);
 ```
 
-Broadcasting
-------
-
-```javascript
-hub.sendToWorkers(message, data); //send message to all workers. Works from master and worker
-```
+Examples:
+* https://github.com/sirian/node-cluster-hub/blob/master/examples/index.js
+* https://github.com/sirian/node-cluster-hub/blob/master/examples/broadcast.js
 
 Requests between master and workers (with callback)
 ------
+Same as simple messaging, but you can provide a callback 
 
-See "Getting Started" section for example
+```javascript
+hub.requestMaster(message, data, callback);  //works from workers and master
+hub.requestWorker(worker, message, data, callback);  // works from master
+```
+
+Example in "Getting Started" section, and here: https://github.com/sirian/node-cluster-hub/blob/master/examples/requests.js
 
 Exclusive Locks
 ------
 
+This module provide a way to get global exclusive lock between all processes (master and workers). If worker process dies while holding locked section - lock will be released automatically.
+
 ```javascript
+
+// this method available in master and in workers
 hub.lock(lockKey, function(unlock) {
     // exclusive lock here
    ...
    // to unlock - call unlock()
 })
 ```
+
+Example: https://github.com/sirian/node-cluster-hub/blob/master/examples/locks.js
 
 Examples
 ------
