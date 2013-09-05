@@ -22,11 +22,11 @@ if (cluster.isMaster) {
     hub.lock('bar', function (unlock) {
         console.log('bar lock in worker');
         unlock();
-    })
+    });
 
     hub.lock('foo', function (unlock) {
         console.log('foo lock in worker 2');
         unlock();
         process.exit();
-    })
+    });
 }
