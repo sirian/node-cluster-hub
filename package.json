@@ -1,7 +1,7 @@
 {
     "name": "cluster-hub",
     "description": "Interaction between cluster processes (messaging, broadcasting, locks etc)",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "author": "Vasily Khayrulin <sirianru@gmail.com>",
     "keywords": ["cluster", "messaging", "communication", "interaction"],
     "main": "./lib/index.js",
