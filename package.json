@@ -1,18 +1,23 @@
 {
-    "name": "cluster-hub",
-    "description": "Interaction between cluster processes (messaging, broadcasting, locks etc)",
-    "version": "0.0.5",
-    "author": "Vasily Khayrulin <sirianru@gmail.com>",
-    "keywords": ["cluster", "messaging", "communication", "interaction"],
-    "main": "./lib/index.js",
-    "dependencies": {
-        "async": "*"
-    },
-    "bugs": {
-        "url": "https://github.com/sirian/node-cluster-hub/issues/new"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/sirian/node-cluster-hub.git"
-    }
+  "name": "cluster-hub",
+  "description": "Interaction between cluster processes (messaging, broadcasting, locks etc)",
+  "version": "0.1.0",
+  "author": "Vasily Khayrulin <sirianru@gmail.com>",
+  "keywords": [
+    "cluster",
+    "messaging",
+    "communication",
+    "interaction"
+  ],
+  "main": "./lib/index.js",
+  "dependencies": {
+    "async": "~0.9.0",
+  },
+  "bugs": {
+    "url": "https://github.com/sirian/node-cluster-hub/issues/new"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sirian/node-cluster-hub.git"
+  }
 }

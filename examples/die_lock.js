@@ -1,7 +1,7 @@
 var Hub = require('../lib');
 var cluster = require('cluster');
 
-var hub = new Hub(cluster);
+var hub = new Hub();
 
 if (cluster.isMaster) {
     cluster.fork();
