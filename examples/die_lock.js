@@ -9,7 +9,7 @@ if (cluster.isMaster) {
 
 } else {
     hub.lock('foo', function (unlock) {
-        console.log('locked foo in worker ' + cluster.worker.uniqueID);
+        console.log('locked foo in worker ' + cluster.worker.id);
         process.exit();
     });
 }
