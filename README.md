@@ -14,7 +14,7 @@ Getting started
 ```javascript
 var Hub  = require('cluster-hub');
 var cluster = require('cluster');
-var hub = new Hub(cluster);
+var hub = new Hub();
 
 if (cluster.isMaster) {
     // in master process
