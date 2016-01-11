@@ -1,7 +1,7 @@
 {
   "name": "cluster-hub",
   "description": "Interaction between cluster processes (messaging, broadcasting, locks etc)",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Vasily Khayrulin <sirianru@gmail.com>",
   "keywords": [
     "cluster",
