@@ -1,6 +1,8 @@
 node-cluster-hub
 ================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/sirian/node-cluster-hub.svg)](https://greenkeeper.io/)
+
 A layer for communcation between master and worker processes
 
 Installation
